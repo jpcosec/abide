@@ -111,7 +111,7 @@ def collect_and_download(derivative, pipeline, strategy, out_dir,
             row_mean_fd = float(cs_row[mean_fd_idx])
         except Exception as exc:
             err_msg = 'Error extracting info from phenotypic file, skipping...'
-            print err_msg
+            print(err_msg)
             continue
 
         # If the filename isn't specified, skip
@@ -133,7 +133,7 @@ def collect_and_download(derivative, pipeline, strategy, out_dir,
             filename = row_file_id + '_' + derivative + extension
             s3_path = '/'.join([s3_prefix, 'Outputs', pipeline, strategy,
                                    derivative, filename])
-            print 'Adding %s to download queue...' % s3_path
+            print('Adding %s to download queue...' % s3_path)
             s3_paths.append(s3_path)
         else:
             continue
